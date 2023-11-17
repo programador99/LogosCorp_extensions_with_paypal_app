@@ -1,0 +1,30 @@
+
+<?php
+    $locations=$block->getLocations();
+    $listForms=[];
+    $nameLabelField=$block->getNameLabelField();
+
+    if($block->applyInCheckoutFormShipping()){   $listForms[]="form#co-shipping-form";           }
+    if($block->applyInCheckoutFormBilling()){    $listForms[]=".billing-address-form > form";    } 
+
+if($block->isEnable() && count($listForms)>0){
+?>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "CustomRenderPostCode": {
+                "locations":<?=json_encode($locations)?>,
+                "selectorBody":".checkout-index-index",
+                "selectorForms":<?=json_encode($listForms)?>,
+                "labelCodigoPostal":"<?=__($nameLabelField)?>",
+                "isCheckout":true
+            }
+        }
+}
+</script>
+
+
+<?php   
+}
+?>

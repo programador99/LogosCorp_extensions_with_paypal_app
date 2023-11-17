@@ -1,0 +1,15 @@
+{
+    "logoscorp_currency_codes": {
+        "column": {
+            "id": true,
+            "country_id": true,
+            "currency_id": true,
+            "name": true,
+            "numeric_code": true
+        },
+        "constraint": {
+            "LOGOSCORP_CURRENCY_CODES_COUNTRY_ID_DIRECTORY_COUNTRY_COUNTRY_ID": true,
+            "PRIMARY": true
+        }
+    }
+}

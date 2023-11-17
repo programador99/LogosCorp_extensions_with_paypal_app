@@ -1,0 +1,132 @@
+<?php
+
+/**
+ * @var \LogosCorp\StoreLocator\Block\StoreLocator $block
+ */
+
+$website = $block->getStore();
+$webSites = $block->getWebSites();
+$customerId = $block->getCustomerId();
+$preferredStoreId = $customerId ? $block->getPreferredStore($customerId) : null;
+
+$customerRender=$this->helper('LogosCorp\StoreLocator\Helper\CustomRenderQuotes');
+$helperData = $this->helper('LogosCorp\StoreLocator\Helper\Data');
+?>
+
+<div data-block="store-dropdown" class="store store-locator">
+    <a href="#" class="store__button" title="Store Finder" data-trigger="store-trigger">
+        <span class="MyStore__label">
+            <div class="store__label"><?= __("You're buying in") ?></div>
+            <div class="store__name"><?= $website['name'] ?></div>
+            <div class="store__hours"><?= __("Open").' '.$website['hours'] ?></div>
+        </span>
+    </a>
+</div>
+
+<div id="store-popup" class="block block-minicart" data-mage-init='{
+        "dropdownDialog": {
+            "appendTo": "[data-block=store-dropdown]",
+            "triggerTarget":"[data-trigger=store-trigger]",
+            "timeout": 2000,
+            "closeOnMouseLeave": false,
+            "closeOnClickOutside": false,
+            "closeOnEscape": true,
+            "autoOpen": false,
+            "triggerClass": "active",
+            "parentClass": "active",
+            "buttons": []
+            }
+        }'>
+    <div id="content-wrapper">
+        <?php
+            if($customerRender->showStorelocator()){
+        ?>
+            <h4 class="title"><?= $website['name'] ?></h4>
+            <div class="description">
+                <div class="schedule">
+                    <span class="sub-title"><?= __('Schedule') ?></span>
+                    <span class="text">
+                        <?php
+                            foreach ($website['schedule'] as $key => $value) {
+                                echo $value.'<br>';
+                            }
+                        ?>
+                    </span>
+                </div>
+                <div class="phone">
+                    <span class="sub-title"><?= __('Phone') ?></span>
+                    <span class="text">
+                        <?php
+                            foreach ($website['phones'] as $key => $value) {
+                                echo '<a href="tel:'. str_replace(['-', " "], '', $value) .'">'. $value .'</a><br>';
+                            }
+                        ?>
+                    </span>
+                </div>
+                <div class="address">
+                    <span class="sub-title"><?= __('Address') ?></span>
+                    <span class="text">
+                    <?= $website['street_line1'] .' '. $website['city'] .' '. $website['postcode'] ?>
+                    </span>
+                </div>
+            </div>
+            <div class="location">
+                <iframe
+                    width="140"
+                    height="160"
+                    frameborder="0"
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                    src="https://maps.google.com/maps?q=<?= $website['latitud'] ?>,<?= $website['longitud'] ?>&hl=es&z=14&amp;output=embed"
+                >
+                </iframe>
+            </div>
+            <span class="separator"></span>
+            
+        <?php
+            }
+        ?>
+        <button type="btn btn-primary" class="action" data-trigger="modal-trigger">
+            <span><?= __('Search another Store?') ?></span>
+        </button>
+        <?=$customerRender->getCartsToRender();?>
+    </div>
+    <div class="mage-dropdown-arrow"></div>
+</div>
+
+<div class="stores-list" data-bind="mageInit: {
+        'Magento_Ui/js/modal/modal':{
+            'type': 'slide',
+            'trigger': '[data-trigger=modal-trigger]',
+            'responsive': true,
+            'modalClass': 'stores store-locator',
+            'buttons': [],
+            'opened': function() { 
+                jQuery('#store-popup').dropdownDialog('close'); 
+                jQuery('#stores-search').focus();
+            },
+        }}">
+    <div class="content">
+        <div id="app">
+            <app 
+                data-store="<?= $block->escapeHtmlAttr(json_encode($website)) ?>" 
+                items="<?= $block->escapeHtmlAttr(json_encode($webSites)) ?>" 
+                customer-id="<?= $customerId ?>" 
+                current-store-id="<?= $website['store_id'] ?>"
+                preferred-store-id="<?= $preferredStoreId ?>">
+            </app>
+        </div>
+    </div>
+</div>
+
+<!-- INIT VUEJS -->
+<script type="text/x-magento-init">
+    {
+        "#app": {
+            "LogosCorp_StoreLocator/js/app": {
+                "storeLocale": "<?= /* @escapeNotVerified */ $helperData->getLocaleCode() ?>"
+            }
+        }
+    }
+</script>

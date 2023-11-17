@@ -1,0 +1,41 @@
+<div class="field choice promotions_and_discounts">
+    <input type="checkbox"
+        name="promotions_and_discounts"
+        title="<?= $escaper->escapeHtmlAttr(__('Promotions and discounts')) ?>"
+        value="1"
+        id="promotions_and_discounts"
+        class="checkbox"
+        <?= ($block->getCustomer() && $block->getCustomer()->getCustomAttribute('promotions_and_discounts')->getValue()) ? 'checked="checked"' : null; ?>
+        >
+    <label for="promotions_and_discounts" class="label">
+        <span><?= $escaper->escapeHtml(__('Promotions and discounts')) ?></span>
+    </label>
+</div>
+
+<div class="field choice events">
+    <input type="checkbox"
+        name="events"
+        title="<?= $escaper->escapeHtmlAttr(__('Events')) ?>"
+        value="1"
+        id="events"
+        class="checkbox"
+        <?= ($block->getCustomer() && $block->getCustomer()->getCustomAttribute('events')->getValue()) ? 'checked="checked"' : null; ?>
+        >
+    <label for="events" class="label">
+        <span><?= $escaper->escapeHtml(__('Events')) ?></span>
+    </label>
+</div>
+
+<div class="field choice bioinsuperables">
+    <input type="checkbox"
+        name="bioinsuperables"
+        title="<?= $escaper->escapeHtmlAttr(__('#BioInsuperables Prices')) ?>"
+        value="1"
+        id="bioinsuperables"
+        class="checkbox"
+        <?= ($block->getCustomer() && $block->getCustomer()->getCustomAttribute('bioinsuperables')->getValue()) ? 'checked="checked"' : null; ?>
+        >
+    <label for="bioinsuperables" class="label">
+        <span><?= $escaper->escapeHtml(__('#BioInsuperables Prices')) ?></span>
+    </label>
+</div>

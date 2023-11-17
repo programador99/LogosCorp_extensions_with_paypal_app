@@ -1,0 +1,27 @@
+<?php
+    if(!is_null($block->getData('infoQuotes')) && is_array($block->getData('infoQuotes')) && count($block->getData('infoQuotes'))>0){
+?>   
+
+<div class="content-carts">
+    <div class="separator"></div>
+    <div class="items-cart">
+<?php
+        foreach ($block->getData('infoQuotes') as $quote) {
+            ?>   
+            <a class="link"  href="<?=$quote['websiteIdUrl']?>" target="_self">
+                <div class="item-store" style="">
+                    <div class="left">
+                        <div class="name"> <?=$quote['webSiteName']?></div>
+                    </div>
+                    <div class="right">
+                        <div class="icon-cart <?=$quote['iconCart']?>"></div>
+                        <div class="qty"> <span> <?=$quote['itemsQty']?> </span> </div>
+                    </div>
+                </div>
+            </a>
+            <?php 
+        }
+    }
+?>
+</div>
+</div>

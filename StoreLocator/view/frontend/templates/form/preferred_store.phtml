@@ -1,0 +1,25 @@
+<?php
+  $storeList=(!is_null($block->getData('storeList')))?$block->getData('storeList'):null;
+  $currentPreferredStore=(!is_null($block->getData('currentPreferredStore')))?$block->getData('currentPreferredStore'):null;
+?>
+
+<div class="field preferred_store">
+    <label class="label" for="preferred_store"><span><?php /* @escapeNotVerified */ echo __('Preferred Store') ?></span></label>
+    <div class="control" class="input-text">
+        <select name="preferred_store" id="preferred_store_list" title="<?php /* @escapeNotVerified */ echo __('Preferred Store') ?>" >
+        <?php
+                    if(is_array($storeList) && count($storeList)>0){
+                        ?>
+                        <option value=""></option> 
+                        <?php
+                        foreach ($storeList as  $store) {
+                            $selected=($currentPreferredStore==$store['store_id'])?"selected":"";
+                        ?>
+                        <option <?=$selected?> value="<?=$store['store_id']?>"><?=$store['name']?></option> 
+                        <?php
+                        }
+                    }
+            ?>
+        </select>
+    </div>
+</div>

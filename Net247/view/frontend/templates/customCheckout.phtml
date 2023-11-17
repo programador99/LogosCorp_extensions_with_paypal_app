@@ -1,0 +1,19 @@
+<?php
+
+    $helperNet247 = $this->helper('LogosCorp\Net247\Helper\Data');
+
+?>
+<?php if ($helperNet247->getSessionEnable()): ?>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "CustomCheckoutJS": {
+            "customCheckoutData": {
+                "time": <?= json_encode( $helperNet247->getSessionTime() ) ?>,
+                "message": <?= json_encode( $helperNet247->getSessionMessage() ) ?>
+            }
+        }
+    }
+}
+</script>
+<?php endif; ?>

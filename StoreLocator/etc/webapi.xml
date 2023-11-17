@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <route url="/V1/logoscorp/store-locators" method="GET">
+        <service class="LogosCorp\StoreLocator\Api\StoreLocatorInterface" method="getWebSites"/>
+        <resources>
+           <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <route url="/V1/logoscorp/store-locators/preferred-store" method="POST">
+        <service class="LogosCorp\StoreLocator\Api\StoreLocatorInterface" method="savePreferredStore"/>
+        <resources>
+           <resource ref="anonymous" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+
+</routes>

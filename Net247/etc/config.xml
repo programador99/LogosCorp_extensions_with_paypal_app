@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <net247>
+                <active>0</active>
+                <debug>1</debug>                
+                <can_use_checkout>1</can_use_checkout>
+                <can_authorize>1</can_authorize>
+                <can_capture>1</can_capture>
+                <order_status>payment_review</order_status>
+                <model>LogosCorp\Net247\Model\Payment</model>
+                <payment_action>authorize</payment_action>
+                <title>Tarjeta Credito - Net 24/7</title>
+                <api_key></api_key>
+                <merchant_id></merchant_id>
+                <tender></tender>
+                <cctypes>AE,VI,MC,DI,JCB</cctypes>
+                <allowspecific>0</allowspecific>
+                <cms></cms>
+                <instructions></instructions>
+                <session_enable>0</session_enable>
+                <session_time>5</session_time>
+                <session_message>Session has expired</session_message>
+                <min_order_total></min_order_total>
+                <max_order_total></max_order_total>
+                <sort_order></sort_order>
+                <pre_auth_enable>1</pre_auth_enable>
+            </net247>
+        </payment>
+    </default>
+</config>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>  
+        <add id="LogosCorp_StoreLocator::view_configuration" 
+            title="Store Locator" module="LogosCorp_StoreLocator" 
+            sortOrder="20" parent="LogosCorp_Core::manager" 
+            action="adminhtml/system_config/edit/section/logoscorp_storelocator" 
+            resource="LogosCorp_StoreLocator::view_configuration"/>
+    </menu>
+</config>

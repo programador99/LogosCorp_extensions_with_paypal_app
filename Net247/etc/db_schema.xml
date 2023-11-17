@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<schema 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd"
+>
+    <table name="logoscorp_currency_codes" engine="innodb" comment="Custom Currency Codes for LogosCorp Net 24/7">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+        <column xsi:type="varchar" name="country_id" nullable="false" length="2" comment="Country ID"/>
+        <column xsi:type="varchar" name="currency_id" nullable="false" length="3" comment="Currency Code ID in ISO"/>
+        <column xsi:type="text" name="name" nullable="false" comment="Currency Name"/>
+        <column xsi:type="int" name="numeric_code" padding="10" unsigned="true" nullable="false" comment="Numeric Code"/>
+        
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

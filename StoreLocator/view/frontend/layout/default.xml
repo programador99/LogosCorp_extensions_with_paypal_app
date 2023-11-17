@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceContainer name="header-wrapper">
+        <block ifconfig="logoscorp_storelocator/general_settings/enable" class="LogosCorp\StoreLocator\Block\StoreLocator" name="store_locator" template="LogosCorp_StoreLocator::topmenu.phtml" cacheable="false" />
+    </referenceContainer>
+    <move element="store_locator" destination="header-wrapper" after="logo" />
+</page>

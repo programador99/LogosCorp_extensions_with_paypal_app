@@ -1,0 +1,10 @@
+<?php
+/* @var $block \LogosCorp\Net247\Block\Checkout\Success */
+$referenceCode = $block->getReferenceCode();
+?>
+
+<?php if (!is_null($referenceCode)): ?>
+<p class="reference-code">
+    <?= __('Transaction reference number: <strong>%1</strong>.', $referenceCode) ?>
+</p>
+<?php endif; ?>

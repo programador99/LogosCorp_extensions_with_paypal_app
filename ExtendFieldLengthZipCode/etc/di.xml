@@ -1,0 +1,26 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+     <preference for="Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\CSV\RowParser" 
+    type="LogosCorp\ExtendFieldLengthZipCode\Model\ResourceModel\Carrier\Tablerate\CSV\RowParser" />
+
+    
+    <preference for="Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate\CSV\ColumnResolver" 
+    type="LogosCorp\ExtendFieldLengthZipCode\Model\ResourceModel\Carrier\Tablerate\CSV\ColumnResolver" />
+
+    <!-- Include list of Zip Codes in window.checkoutconfig  -->
+    <preference for="Magento\Checkout\Block\Onepage" 
+    type="LogosCorp\ExtendFieldLengthZipCode\Block\Onepage" />
+
+    <!-- render address inline by format, applied in my account, email template and order backend -->
+    <preference for="Magento\Customer\Block\Address\Renderer\DefaultRenderer" 
+    type="LogosCorp\ExtendFieldLengthZipCode\Block\Address\Renderer\DefaultRenderer" />
+
+    <!-- render model of checkout address display -->
+    <type name="Magento\Customer\Model\Address\CustomerAddressDataFormatter">
+        <plugin name="logoscorp-extendfieldlengthzipcode-customeraddressdataformatter-prepareaddress" type="LogosCorp\ExtendFieldLengthZipCode\Plugin\Model\Address\CustomerAddressDataFormatter" sortOrder="1"/>
+    </type>
+
+    <preference for="LogosCorp\ExtendFieldLengthZipCode\Api\AliasPostCodeInterface" 
+                type="LogosCorp\ExtendFieldLengthZipCode\Model\AliasPostCode" />  
+
+</config>

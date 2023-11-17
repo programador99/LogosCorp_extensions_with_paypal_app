@@ -1,0 +1,7 @@
+{
+    "shipping_tablerate": {
+        "column": {
+            "alias": true
+        }
+    }
+}

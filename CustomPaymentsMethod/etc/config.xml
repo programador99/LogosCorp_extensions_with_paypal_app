@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <payment>
+            <custompaymentsmethod1>
+                <active>1</active>
+                <model>LogosCorp\CustomPaymentsMethod\Model\CustomPaymentMethod1</model>
+                <order_status>pending</order_status>
+                <title>Payment 1</title>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+            </custompaymentsmethod1>
+
+            <custompaymentsmethod2>
+                <active>1</active>
+                <model>LogosCorp\CustomPaymentsMethod\Model\CustomPaymentMethod2</model>
+                <order_status>pending</order_status>
+                <title>Payment 2</title>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+            </custompaymentsmethod2>
+
+            <custompaymentsmethod3>
+                <active>1</active>
+                <model>LogosCorp\CustomPaymentsMethod\Model\CustomPaymentMethod3</model>
+                <order_status>pending</order_status>
+                <title>Payment 3</title>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+            </custompaymentsmethod3>
+
+            <paypal_app>
+                <active>1</active>
+                <model>LogosCorp\CustomPaymentsMethod\Model\PayPalPaymentMethod</model>
+                <order_status>processing</order_status>
+                <title>PayPal App</title>
+                <allowspecific>0</allowspecific>
+                <group>online</group>
+            </paypal_app>
+
+            <!-- C2P MegaSoft -->
+            <c2p_megasoft>
+                <active>1</active>
+                <model>LogosCorp\CustomPaymentsMethod\Model\C2PPaymentMethod</model>
+                <order_status>processing</order_status>
+                <title>C2P Pago Movil</title>
+                <allowspecific>0</allowspecific>
+                <group>online</group>
+            </c2p_megasoft>
+
+            <!-- Binance USDT -->
+            <binance_usdt>
+                <active>1</active>
+                <model>LogosCorp\CustomPaymentsMethod\Model\BinanceUSDTPaymentMethod</model>
+                <order_status>pending</order_status>
+                <title>Binance USDT</title>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+            </binance_usdt>
+
+            <!-- Theter USDT (TRC20) -->
+            <tether_trc20>
+                <active>1</active>
+                <model>LogosCorp\CustomPaymentsMethod\Model\TetherUsdtTRC20PaymentMethod</model>
+                <order_status>pending</order_status>
+                <title>Theter (TRC20)</title>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+            </tether_trc20>
+
+            <!-- Mony -->
+            <mony>
+                <active>1</active>
+                <model>LogosCorp\CustomPaymentsMethod\Model\MonyPaymentMethod</model>
+                <order_status>pending</order_status>
+                <title>Mony</title>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+            </mony>
+
+            <!-- Boton Banesco -->
+            <boton_banesco>
+                <active>1</active>
+                <model>LogosCorp\CustomPaymentsMethod\Model\BotonBanescoPaymentMethod</model>
+                <order_status>pending</order_status>
+                <title>Boton Banesco</title>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+            </boton_banesco>
+        </payment>
+    </default>
+</config>

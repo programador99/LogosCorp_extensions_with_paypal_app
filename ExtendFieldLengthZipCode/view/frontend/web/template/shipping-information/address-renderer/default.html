@@ -1,0 +1,35 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<if args="visible()">
+    <text args="address().prefix" /> <text args="address().firstname" /> <text args="address().middlename" />
+    <text args="address().lastname" /> <text args="address().suffix" /><br/>
+    <text args="_.values(address().street).join(', ')" /><br/>
+    <text args="address().city " />, <span text="address().region"></span>,
+
+    <if args="Object.keys(address().customAttributes)[0]==0">
+        <if args="typeof address().customAttributes.filter(function(item) { return item.attribute_code == 'postcode_alias'; }) === 'object'">
+            <text args="address().customAttributes.filter(function(item) { return item.attribute_code == 'postcode_alias'; })[0].value" />
+        </if>
+    </if>
+
+    <if args="Object.keys(address().customAttributes)[0]!=0">
+        <if args="typeof address().customAttributes['postcode_alias'] === 'object'">
+            <span html="address().customAttributes['postcode_alias'].value"></span>
+        </if>
+    </if>
+    <br/>
+
+    <text args="getCountryName(address().countryId)" /><br/>
+    <a if="address().telephone" attr="'href': 'tel:' + address().telephone" text="address().telephone"></a><br/>
+
+    <each args="data: address().customAttributes, as: 'element'">
+        <if args="typeof element.attribute_code !== 'undefined' && element.attribute_code !== 'postcode_alias'">
+            <text args="$parent.getCustomAttributeLabel(element)" />
+            <br/>
+        </if>
+    </each>
+</if>

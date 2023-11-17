@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="net247" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>LogosCorp - Net 24/7 Payment Gateway</label>
+                <field id="active" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="debug" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Title</label>
+                </field>
+                <field id="api_url" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>API URL</label>
+                    <comment>Insert the url without slash at the end.</comment>
+                </field>
+                <field id="api_token" translate="label" type="password" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>API Token</label>
+                </field>
+                <field id="tender" translate="label comment" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Tender</label>
+                    <comment>Leave empty if you don't have one.</comment>
+                </field>
+                <field id="merchant_id" translate="label" type="password" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Merchant ID</label>
+                </field>
+                <field id="payment_action" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment Action</label>
+                    <source_model>LogosCorp\Net247\Model\Adminhtml\Source\PaymentActions</source_model>
+                </field>
+                <field id="cctypes" translate="label" type="multiselect" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Credit Card Types</label>
+                    <source_model>LogosCorp\Net247\Model\Source\Cctype</source_model>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="cms" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1"  canRestore="1">
+                    <label>FAQ Page</label>
+                    <source_model>Magento\Cms\Model\Config\Source\Page</source_model>
+                </field>
+                <field id="instructions" translate="label comment" type="textarea" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Instructions</label>
+                    <comment>Message that will automatically appear in the text field of payment method</comment>
+                </field>
+                <field id="session_enable" translate="label" type="select" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Session Expiration Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="session_time" translate="label comment" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Session Expiration Time</label>
+                    <validate>validate-number</validate>
+                    <comment>Insert the time expressed in minutes and only numbers</comment>
+                    <depends>
+                        <field id="session_enable">1</field>
+                    </depends>
+                </field>
+                <field id="session_message" translate="label comment" type="textarea" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Session Expiration Message</label>
+                    <depends>
+                        <field id="session_enable">1</field>
+                    </depends>
+                </field>
+                <field id="min_order_total" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Minimum Order Total</label>
+                    <comment>Leave empty to disable limit.</comment>
+                </field>
+                <field id="max_order_total" translate="label" type="text" sortOrder="16" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Maximum Order Total</label>
+                    <comment>Leave empty to disable limit.</comment>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="17" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

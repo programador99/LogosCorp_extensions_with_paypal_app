@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="logoscorp_custom_login" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Custom Login</label>
+            <tab>logoscorp</tab>
+            <resource>Mstage_Importer::config</resource>
+            <group id="redirect_login" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Redirect Login</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field> 
+                <field id="redirect_page" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1"  canRestore="1">
+                    <label>Page</label>
+                    <source_model>Magento\Cms\Model\Config\Source\Page</source_model>
+                    <comment>Insert the route redirect after login</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

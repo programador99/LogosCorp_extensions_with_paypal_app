@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <logoscorp_storelocator>
+            <general_settings>
+                <enable>1</enable>
+                <enable_custom_carts_render>1</enable_custom_carts_render>
+            </general_settings>
+        </logoscorp_storelocator>
+
+        <general>
+            <store_information>
+                <type_store>1</type_store>
+            </store_information>
+        </general>
+    </default>
+</config>

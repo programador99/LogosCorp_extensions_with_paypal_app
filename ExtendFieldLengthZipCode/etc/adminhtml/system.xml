@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+         <section id="logoscorp_custom_render_postcode" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Custom Render Postcode</label>
+            <tab>logoscorp</tab>
+            <resource>Mstage_Importer::config</resource>
+            
+            <group id="general_settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                 <comment>Replace the  postcode field in the directions forms with the postcode defined in the table rate list</comment>
+                
+                <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1"  canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="apply_in_form_shiping" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1"  canRestore="1">
+                    <label>Apply in shipping address form in the checkout page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="apply_in_form_billing" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1"  canRestore="1">
+                    <label>Apply in billing address form in the checkout page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                 <field id="label_field" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1"  canRestore="1">
+                    <label>Name Label Field</label>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="logoscorp_custom_registration" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Custom Registration</label>
+            <tab>logoscorp</tab>
+            <resource>Mstage_Importer::config</resource>
+
+            <group id="terms_settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Terms and Conditions Settings</label>
+                <field id="terms_page" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1"  canRestore="1">
+                    <label>Page</label>
+                    <source_model>Magento\Cms\Model\Config\Source\Page</source_model>
+                    <comment>Insert the route where the Terms and Conditions are loaded.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,7 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="LogosCorp\StoreLocator\Block\Widget\StoresWidget" id="logoscorp_stores_widget">
+        <label>Logoscorp - Stores List</label>
+        <description>Show Stores List - by Logoscorp!</description>
+    </widget>
+</widgets>

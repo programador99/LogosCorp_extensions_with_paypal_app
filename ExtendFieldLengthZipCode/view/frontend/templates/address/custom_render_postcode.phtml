@@ -1,0 +1,28 @@
+
+<?php 
+
+if($block->isEnable()){
+    $locations=$block->getLocations();
+    $nameLabelField=$block->getNameLabelField();
+    $listBody=[".customer-address-form", ".customer-account-create"];
+    $listForms=["form.form-address-edit", "form.form-create-account"];
+?>
+
+    <script type="text/x-magento-init">
+    {
+        "*": {
+            "CustomRenderPostCode": {
+                    "locations":<?=json_encode($locations)?>,
+                    "labelCodigoPostal":"<?=__($nameLabelField)?>",
+                    "selectorBody":<?=json_encode($listBody)?>,
+                    "selectorForms":<?=json_encode($listForms)?>,
+                    "isCheckout":false
+                }
+            }
+    }
+    </script>
+
+
+<?php   
+}
+?>

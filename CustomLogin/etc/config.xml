@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <logoscorp_custom_login>
+            <redirect_login>
+                <enable></enable>
+                <redirect_page></redirect_page>
+            </redirect_login>
+        </logoscorp_custom_login>
+    </default>
+</config>

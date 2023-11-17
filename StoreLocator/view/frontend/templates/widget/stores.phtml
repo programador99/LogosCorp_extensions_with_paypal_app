@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var \LogosCorp\StoreLocator\Block\Widget\StoresWidget $block
+ */
+
+$website = $block->_storeLocator->getStore();
+$webSites = $block->_storeLocator->getWebSites();
+$customerId = $block->_storeLocator->getCustomerId();
+$preferredStoreId = $customerId ? $block->_storeLocator->getPreferredStore($customerId) : null;
+
+$helperData = $this->helper('LogosCorp\StoreLocator\Helper\Data');
+?>
+<div class="widget widget-stores">
+    <div id="stores-list-widget">
+        <app 
+            data-store="<?= $block->escapeHtmlAttr(json_encode($website)) ?>" 
+            items="<?= $block->escapeHtmlAttr(json_encode($webSites)) ?>" 
+            customer-id="<?= $customerId ?>" 
+            preferred-store-id="<?= $preferredStoreId ?>"
+            is-widget="1">
+        </app>
+    </div>
+    <script type="text/x-magento-init">
+        {
+            "#stores-list-widget": {
+                "LogosCorp_StoreLocator/js/widget-app": {
+                    "storeLocale": "<?= /* @escapeNotVerified */ $helperData->getLocaleCode() ?>"
+                }
+            }
+        }
+    </script>
+</div>

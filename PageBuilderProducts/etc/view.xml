@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <vars module="Magento_PageBuilder">
+        <var name="breakpoints">
+            <var name="desktop-large">
+                <var name="label">Desktop Large</var>
+                <var name="stage">true</var>
+                <var name="class">desktop-large-switcher</var>
+                <var name="icon">Magento_PageBuilder::css/images/switcher/switcher-desktop.svg</var>
+                <var name="conditions">
+                    <var name="min-width">1660px</var>
+                </var>
+                <var name="options">
+                    <var name="products">
+                        <var name="default">
+                            <var name="slidesToShow">5</var>
+                        </var>
+                        <var name="continuous">
+                            <var name="slidesToShow">5</var>
+                        </var>
+                    </var>
+                </var>
+            </var>
+            <var name="desktop">
+                <var name="label">Desktop</var>
+                <var name="stage">true</var>
+                <var name="default">true</var>
+                <var name="class">desktop-switcher</var>
+                <var name="icon">Magento_PageBuilder::css/images/switcher/switcher-desktop.svg</var>
+                <var name="conditions">
+                    <var name="max-width">1659px</var>
+                    <var name="min-width">1280px</var>
+                </var>
+            </var>
+            <var name="tablet">
+                <var name="label">Tablet</var>
+                <var name="stage">true</var>
+                <var name="class">tablet-switcher</var>
+                <var name="icon">LogosCorp_PageBuilderProducts::css/images/switcher/switcher-tablet.svg</var>
+                <var name="conditions">
+                    <var name="max-width">1279px</var>
+                    <var name="min-width">768px</var>
+                </var>
+            </var>
+            <var name="mobile">
+                <var name="label">Mobile</var>
+                <var name="stage">true</var>
+                <var name="class">mobile-switcher</var>
+                <var name="icon">Magento_PageBuilder::css/images/switcher/switcher-mobile.svg</var>
+                <var name="media">only screen and (max-width: 768px)</var>
+                <var name="conditions">
+                    <var name="max-width">767px</var>
+                    <var name="min-width">425px</var>
+                </var>
+            </var>
+            <var name="mobile-small">
+                <var name="label">Mobile Small</var>
+                <var name="stage">true</var>
+                <var name="class">mobile-small-switcher</var>
+                <var name="icon">LogosCorp_PageBuilderProducts::css/images/switcher/switcher-mobile-small.svg</var>
+                <var name="conditions">
+                    <var name="max-width">424px</var>
+                </var>
+            </var>
+        </var>
+    </vars>
+</view>

@@ -1,0 +1,50 @@
+
+<?php
+
+// LogosCorp Helper 
+$helperZipCodes=$this->helper('LogosCorp\ExtendFieldLengthZipCode\Helper\ZipCodes');
+
+
+
+
+try {
+
+    $frontendLabel=(!is_null($block->getData('frontendLabel')))?$block->getData('frontendLabel'):"";
+    $validateClass=(!is_null($block->getData('validateClass')))?$block->getData('validateClass'):"";
+    $attributeValue=(!is_null($block->getData('attributeValue')))?$block->getData('attributeValue'):"";
+
+?>
+
+<select name="postcode"
+        title="<?= $frontendLabel ?>"
+        id="zip"
+        class="input-text validate-select validate-zip-international <?= $validateClass?>">
+    <?php
+    $attributeOptions = $helperZipCodes->getZipCodesOptions();
+    $seleccione_option_selected=true;
+    $html_options='';
+
+    foreach ($attributeOptions as $option => $values) {
+        
+        if ($attributeValue == $values['value']) {
+            
+            $html_options.= '<option selected value="'.$values['value'].'">'.$values['label'].'</option>';
+            $seleccione_option_selected=false;
+        } else {
+            $html_options.= '<option value="'.$values['value'].'">'.$values['label'].'</option>';
+        }
+    }
+
+    if($seleccione_option_selected){
+        $html_options='<option selected ></option>'.$html_options;
+    }else{
+        $html_options='<option></option>'.$html_options;
+    }
+    echo $html_options;
+    ?>
+</select>
+<?php
+} catch (\Throwable $th) {
+    echo "<strong>ERROR== ".$th->getMessage().'</strong>';
+}
+?>

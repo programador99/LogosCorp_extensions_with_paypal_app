@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <logoscorp_custom_render_postcode>
+            <general_settings>
+                <enable>1</enable>
+                <apply_in_form_shiping>1</apply_in_form_shiping>
+                <apply_in_form_billing>1</apply_in_form_billing>
+                <label_field>Urbanization</label_field>
+            </general_settings>
+        </logoscorp_custom_render_postcode>
+    </default>
+</config>

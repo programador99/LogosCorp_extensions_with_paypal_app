@@ -1,0 +1,59 @@
+
+.header.content > #store-popup {
+  display: none;
+}
+.store-locator {
+  a {
+    text-decoration: none;
+    color: #333333;
+  }
+  .ui-dialog.ui-widget-content{
+    display: none;
+  }
+}
+
+form#myStore-overlayForm {
+  display: flex;
+}
+
+button#myStore-useCurrentLocation {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  outline: none;
+  text-align: center;
+  color: #3e7697;
+}
+
+div.modals-wrapper aside.store-locator.modal-slide._show {
+  width: fit-content;
+}
+
+/* SideBar */
+.store-locator {
+  &.modal-slide {
+    left: -175px;
+
+    &._show {
+      transition: opacity 0.1s ease;
+    }
+
+    .modal-inner-wrap {
+      width: 350px;
+      transform: translateX(0);
+    }
+  }
+
+  &.modal-slide._show .modal-inner-wrap {
+    transform: translateX(50%);
+  }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>  
+        <add id="LogosCorp_CustomRegistration::view_configuration" 
+            title="Custom Registration" module="LogosCorp_CustomRegistration" 
+            sortOrder="30" parent="LogosCorp_Core::manager" 
+            action="adminhtml/system_config/edit/section/logoscorp_custom_registration" 
+            resource="LogosCorp_CustomRegistration::view_configuration"/>
+    </menu>
+</config>

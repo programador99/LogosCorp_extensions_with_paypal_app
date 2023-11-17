@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="logoscorp" translate="label" sortOrder="1000">
+            <label>Logoscorp</label>
+        </tab>
+        <section id="logoscorp_storelocator" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Store Locator</label>
+            <tab>logoscorp</tab>
+            <resource>Mstage_Importer::config</resource>
+            
+            <group id="general_settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+               
+                <field id="enable" translate="label" type="select" showInDefault="1" canRestore="1">
+                    <label>Enable Store Locator</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Habilitar/Deshabilitar módulo</comment>
+                </field>
+
+                <field id="enable_custom_carts_render" translate="label" type="select" showInDefault="1" canRestore="1">
+                    <label>Show carts in header</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Habilitar/Deshabilitar Visualizacion carrito de otras tiendas</comment>
+                </field>
+
+                <!-- <field id="note" translate="label" type="text" showInDefault="1">
+                    <label>Nota</label>
+                </field> -->
+            </group>
+        </section>
+
+        <section id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>general</tab>
+            <group id="store_information" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+
+                <field id="include_in_storelocator" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Include in Store Locator</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>List store in Store Locator</comment>
+                </field>
+
+                <field id="latitud" translate="label" type="text" sortOrder="63" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Latitude</label>
+                    <depends> 
+                        <field id="include_in_storelocator">1</field>
+                    </depends>
+                </field>
+
+                <field id="longitud" translate="label" type="text" sortOrder="64" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Longitude</label>
+                    <depends> 
+                        <field id="include_in_storelocator">1</field>  
+                    </depends>
+                </field>
+
+                <field id="type_store" translate="label" type="select" sortOrder="65" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Type</label>
+                    <source_model>LogosCorp\StoreLocator\Model\Adminhtml\System\Config\Source\TypeStore</source_model>
+                </field>
+
+                
+
+            </group>
+        </section>
+    </system>
+</config>
